@@ -42,10 +42,10 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Vercel
+.vercel/
+
 # Agent / Scratch logs
 scratch/
 .system_generated/
 
-# Large Model Files (>100MB exceeds GitHub hard limit)
-# Note: dmart_sales_model.pkl.gz (22.9 MB) is committed and used automatically by app.py
-dmart_sales_model.pkl

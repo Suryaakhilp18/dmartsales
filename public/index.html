@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: dark; background-color: #0a0e17;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0e17">
+  <title>DMart Enterprise Operations & Sales Portal | Avenue Supermarts Ltd.</title>
+  <meta name="description"
+    content="Avenue Supermarts Limited (DMart) - Retail Operations, Sales Performance & Order Planning Portal">
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+  <div class="app-layout">
+
+    <!-- Enterprise Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="brand-badge">
+          <div class="dmart-logo-box">
+            <span class="dmart-logo-text">D<span style="color:#fef08a">Mart</span></span>
+            <span class="dmart-logo-sub">Ready</span>
+          </div>
+          <div>
+            <h1 class="brand-title">DMart Retail Operations</h1>
+            <p class="brand-subtitle">Avenue Supermarts Limited · Sales Intelligence & Planning Portal</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="store-network-pill">
+          <span>🏬</span> 330+ Stores Nationwide
+        </div>
+        <div class="system-status">
+          <span class="status-dot"></span>
+          <span>System Online · Live Network</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Clean Navigation Bar -->
+    <nav class="nav-bar" aria-label="Portal Navigation">
+      <div class="nav-container">
+        <button class="nav-tab active" data-tab="tab-overview" id="btn-tab-overview">
+          <span>📊</span> Overview
+        </button>
+        <button class="nav-tab" data-tab="tab-trends" id="btn-tab-trends">
+          <span>📈</span> Sales & Trends
+        </button>
+        <button class="nav-tab" data-tab="tab-products" id="btn-tab-products">
+          <span>📦</span> Products & Inventory
+        </button>
+        <button class="nav-tab" data-tab="tab-models" id="btn-tab-models">
+          <span>🤖</span> Model Performance
+        </button>
+        <button class="nav-tab highlight" data-tab="tab-forecast" id="btn-tab-forecast">
+          <span>⚡</span> Order & Restock Estimator
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+
+      <!-- TAB 1: EXECUTIVE OVERVIEW -->
+      <section id="tab-overview" class="tab-content active">
+        <div class="section-hero">
+          <div>
+            <h2 class="section-title">Retail Operations Overview</h2>
+            <p class="section-desc">Key operational metrics and financial summaries across all nationwide retail
+              branches.</p>
+          </div>
+          <div class="dataset-meta">
+            <span class="meta-tag">📅 2011 – 2017 Audit</span>
+            <span class="meta-tag">📁 18,041 Total Transactions</span>
+            <span class="meta-tag">🏬 5 Regional Zones</span>
+          </div>
+        </div>
+
+        <!-- Metric KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Gross Revenue</span>
+              <span class="kpi-icon sales-icon">💰</span>
+            </div>
+            <div class="kpi-value" id="kpi-sales">$4,645,683</div>
+            <div class="kpi-sub">Total nationwide transaction volume</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Operating Net Profit</span>
+              <span class="kpi-icon profit-icon">📈</span>
+            </div>
+            <div class="kpi-value" id="kpi-profit">$569,637</div>
+            <div class="kpi-sub text-success">Overall Profit Margin: ~12.26%</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Average Basket Size</span>
+              <span class="kpi-icon aov-icon">🛒</span>
+            </div>
+            <div class="kpi-value" id="kpi-aov">$257.51</div>
+            <div class="kpi-sub">Average transaction checkout value</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Completed Orders</span>
+              <span class="kpi-icon orders-icon">📑</span>
+            </div>
+            <div class="kpi-value" id="kpi-orders">18,041</div>
+            <div class="kpi-sub">Store shipments fulfilled</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Standard Pack Quantity</span>
+              <span class="kpi-icon qty-icon">📦</span>
+            </div>
+            <div class="kpi-value" id="kpi-qty">3 Units</div>
+            <div class="kpi-sub">Most frequent purchase quantity</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Top Performance Year</span>
+              <span class="kpi-icon peak-icon">⭐</span>
+            </div>
+            <div class="kpi-value">2014 ($1.24M)</div>
+            <div class="kpi-sub text-highlight">Record sales & $134.8K net profit</div>
+          </div>
+        </div>
+
+        <!-- Visual Highlights -->
+        <div class="cards-two-col">
+          <div class="card">
+            <h3 class="card-title">Department Revenue Contribution</h3>
+            <p class="card-subtitle">Distribution of gross sales across product divisions</p>
+            <div class="chart-box">
+              <canvas id="chart-cat-donut"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Regional Operating Profitability</h3>
+            <p class="card-subtitle">Net profitability generated per geographic territory</p>
+            <div class="chart-box">
+              <canvas id="chart-region-bar"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SALES & TRENDS -->
+      <section id="tab-trends" class="tab-content">
+        <div class="section-hero">
+          <div>
+            <h2 class="section-title">Sales Trends & Historical Performance</h2>
+            <p class="section-desc">Annual revenue trajectory, operating profit growth, and multi-year transaction
+              trends.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <h3 class="card-title">Annual Sales & Net Profit Growth (2011–2017)</h3>
+          <p class="card-subtitle">Comparative volume of Revenue vs. Operating Profit across reporting years</p>
+          <div class="chart-box-large">
+            <canvas id="chart-yearly-trends"></canvas>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <h3 class="card-title">Promotional Discount Impact Curve</h3>
+          <p class="card-subtitle">Relationship between promotional markdown rate and order profitability</p>
+          <div class="chart-box-large">
+            <canvas id="chart-discount-impact"></canvas>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Annual Performance Audit Table</h3>
+          <div class="table-responsive">
+            <table class="data-table" id="table-yearly">
+              <thead>
+                <tr>
+                  <th>Order Year</th>
+                  <th>Total Sales ($)</th>
+                  <th>Net Profit ($)</th>
+                  <th>Profit Margin (%)</th>
+                  <th>Total Orders</th>
+                  <th>Average Ticket ($)</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-yearly">
+                <!-- Dynamically Populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: PRODUCTS & INVENTORY -->
+      <section id="tab-products" class="tab-content">
+        <div class="section-hero">
+          <div>
+            <h2 class="section-title">Department & Product Intelligence</h2>
+            <p class="section-desc">Analysis of product categories, high-velocity sub-categories, and best-selling
+              catalog items.</p>
+          </div>
+        </div>
+
+        <div class="cards-two-col mb-4">
+          <div class="card">
+            <h3 class="card-title">Sales vs. Profit by Department</h3>
+            <p class="card-subtitle">Comparative sales and net profit margins across departments</p>
+            <div class="chart-box">
+              <canvas id="chart-cat-compare"></canvas>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card-title">Top High-Velocity Sub-Categories</h3>
+            <p class="card-subtitle">Highest grossing product lines across retail stores</p>
+            <div class="chart-box">
+              <canvas id="chart-subcat-bar"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <h3 class="card-title">Top 10 Flagship Products (Highest Grossing)</h3>
+          <p class="card-subtitle">Best-selling inventory items across nationwide retail branches</p>
+          <div class="table-responsive">
+            <table class="data-table" id="table-top-products">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Product Name</th>
+                  <th>Category</th>
+                  <th>Gross Sales ($)</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-top-products">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Regional Category Sales Distribution</h3>
+          <p class="card-subtitle">Cross-tabulation showing department volume per geographic territory ($)</p>
+          <div class="table-responsive">
+            <table class="data-table" id="table-region-matrix">
+              <thead>
+                <tr>
+                  <th>Territory</th>
+                  <th>Technology ($)</th>
+                  <th>Office Supplies ($)</th>
+                  <th>Furniture ($)</th>
+                  <th>Regional Total ($)</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-region-matrix">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: MODEL ACCURACY & BENCHMARK -->
+      <section id="tab-models" class="tab-content">
+        <div class="section-hero">
+          <div>
+            <h2 class="section-title">Model Accuracy Comparison</h2>
+            <p class="section-desc">Empirical accuracy comparison across candidate regression algorithms.</p>
+          </div>
+          <div class="dataset-meta">
+            <span class="meta-tag">🎯 Target: Sales ($)</span>
+            <span class="meta-tag">🏆 Production Model: Random Forest</span>
+          </div>
+        </div>
+
+        <!-- Single Clean Card: Model Accuracy Comparison Chart (R²) -->
+        <div class="card mb-4" style="max-width: 960px; margin: 0 auto 1.5rem auto;">
+          <h3 class="card-title">Model Accuracy Comparison Chart (R²)</h3>
+          <p class="card-subtitle">Higher is better: Random Forest delivers the highest explained variance</p>
+          <div class="chart-box" style="height: 380px;">
+            <canvas id="chart-model-accuracy"></canvas>
+          </div>
+
+          <!-- Compact 3-Model Summary Badges (No Clutter, Clean & Minimal) -->
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 0.6rem; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.6rem 1rem; border-radius: 8px;">
+              <span style="font-size: 1.2rem;">👑</span>
+              <div>
+                <strong style="color: #34d399; font-size: 0.92rem; display: block;">Random Forest: 50.0% R²</strong>
+                <small style="color: var(--text-dim); font-size: 0.78rem;">Lowest Error (MAE $108.63) · Deployed</small>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.6rem 1rem; border-radius: 8px;">
+              <span style="font-size: 1.2rem;">ℹ️</span>
+              <div>
+                <strong style="color: var(--text-main); font-size: 0.92rem; display: block;">Linear Regression: 20.9% R²</strong>
+                <small style="color: var(--text-dim); font-size: 0.78rem;">MAE $267.69 · Baseline Model</small>
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.6rem; background: var(--bg-surface-subtle); border: 1px solid var(--border-subtle); padding: 0.6rem 1rem; border-radius: 8px;">
+              <span style="font-size: 1.2rem;">⚠️</span>
+              <div>
+                <strong style="color: var(--text-main); font-size: 0.92rem; display: block;">Decision Tree: 14.0% R²</strong>
+                <small style="color: var(--text-dim); font-size: 0.78rem;">MAE $138.54 · Overfitting</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: ORDER & RESTOCK ESTIMATOR -->
+      <section id="tab-forecast" class="tab-content">
+        <div class="section-hero">
+          <div>
+            <h2 class="section-title">Order Demand & Margin Calculator</h2>
+            <p class="section-desc">Estimate expected order revenue, store profit margin, and inventory restocking
+              requirement.</p>
+          </div>
+        </div>
+
+        <!-- Realistic Quick Presets -->
+        <div class="presets-container">
+          <div class="presets-label">
+            <span>⚡</span> Quick Order Presets:
+          </div>
+          <div class="presets-grid">
+            <button type="button" class="preset-chip" id="preset-tech">
+              <span>📱</span> Electronics & Phones (Qty: 4, Disc: 10%)
+            </button>
+            <button type="button" class="preset-chip" id="preset-office">
+              <span>📦</span> Bulk Office Supplies (Qty: 8, Disc: 5%)
+            </button>
+            <button type="button" class="preset-chip" id="preset-furniture">
+              <span>🪑</span> Store Furniture & Chairs (Qty: 3, Disc: 15%)
+            </button>
+            <button type="button" class="preset-chip" id="preset-clearance">
+              <span>🏷️</span> Clearance Batch (Qty: 6, Disc: 20%)
+            </button>
+          </div>
+        </div>
+
+        <div class="forecast-layout">
+          <!-- Input Form Panel -->
+          <div class="card forecast-form-card">
+            <h3 class="card-title">Order Parameters</h3>
+            <p class="card-subtitle">Enter order specifications to calculate revenue and inventory guidance</p>
+
+            <form id="forecast-form" class="forecast-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-category">Department</label>
+                  <select id="form-category" class="form-select" required>
+                    <option value="Technology">Technology</option>
+                    <option value="Office Supplies">Office Supplies</option>
+                    <option value="Furniture">Furniture</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-subcategory">Sub-Category</label>
+                  <select id="form-subcategory" class="form-select" required>
+                    <option value="Phones">Phones</option>
+                    <option value="Copiers">Copiers</option>
+                    <option value="Accessories">Accessories</option>
+                    <option value="Machines">Machines</option>
+                    <option value="Chairs">Chairs</option>
+                    <option value="Storage">Storage</option>
+                    <option value="Binders">Binders</option>
+                    <option value="Appliances">Appliances</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Art">Art</option>
+                    <option value="Furnishings">Furnishings</option>
+                    <option value="Bookcases">Bookcases</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-segment">Customer Segment</label>
+                  <select id="form-segment" class="form-select" required>
+                    <option value="Consumer">Consumer</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Home Office">Home Office</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-region">Store Region</label>
+                  <select id="form-region" class="form-select" required>
+                    <option value="Central">Central</option>
+                    <option value="West">West</option>
+                    <option value="South">South</option>
+                    <option value="East">East</option>
+                    <option value="North">North</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-shipmode">Shipping Priority</label>
+                  <select id="form-shipmode" class="form-select" required>
+                    <option value="Standard Class">Standard Class</option>
+                    <option value="Second Class">Second Class</option>
+                    <option value="First Class">First Class</option>
+                    <option value="Same Day">Same Day</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-shippingdays">Transit Days</label>
+                  <input type="number" id="form-shippingdays" class="form-input" min="0" max="15" value="3" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="slider-quantity">Order Quantity (Units)</label>
+                  <div class="slider-wrapper">
+                    <input type="range" id="slider-quantity" class="form-range" min="1" max="14" value="3">
+                    <span id="label-quantity" class="range-val">3</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="slider-discount">Promotional Discount (%)</label>
+                  <div class="slider-wrapper">
+                    <input type="range" id="slider-discount" class="form-range" min="0" max="0.80" step="0.05"
+                      value="0.10">
+                    <span id="label-discount" class="range-val">10%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-month">Order Month</label>
+                  <select id="form-month" class="form-select">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6" selected>June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="form-year">Planning Year</label>
+                  <input type="number" id="form-year" class="form-input" min="2017" max="2030" value="2026">
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="btn-predict">
+                <span>⚡</span> Calculate Estimate
+              </button>
+            </form>
+          </div>
+
+          <!-- Prediction Result Panel -->
+          <div class="card forecast-result-card" id="forecast-result-card">
+            <h3 class="card-title">Calculation Summary</h3>
+            <p class="card-subtitle">Projected financial performance & inventory restocking guidance</p>
+
+            <div class="forecast-result-body">
+              <div class="prediction-highlight">
+                <span class="pred-label">Projected Order Revenue</span>
+                <span class="pred-number" id="result-sales">$284.50</span>
+              </div>
+
+              <div class="result-metrics-grid">
+                <div class="res-metric">
+                  <span class="res-metric-label">Estimated Profit</span>
+                  <span class="res-metric-val text-success" id="result-profit">$39.83</span>
+                </div>
+                <div class="res-metric">
+                  <span class="res-metric-label">Profit Margin</span>
+                  <span class="res-metric-val" id="result-margin">14.0%</span>
+                </div>
+                <div class="res-metric">
+                  <span class="res-metric-label">Demand Velocity</span>
+                  <span class="res-metric-val text-info" id="result-tier">Moderate Demand</span>
+                </div>
+              </div>
+
+              <div class="inventory-card">
+                <div class="inv-header">
+                  <span>📦</span>
+                  <strong>Restocking & Inventory Guidance</strong>
+                </div>
+                <p id="result-inventory" class="inv-text">
+                  Maintain standard buffer (25-40 units) for consistent weekly sales clearance.
+                </p>
+              </div>
+
+              <div class="model-signature">
+                <small id="result-model-sig">DMart Retail Operations Demand Engine</small>
+                <div style="margin-top: 6px;">
+                  <button type="button" class="btn-link" id="btn-goto-models" style="background:none; border:none; color:#34d399; font-size:0.8rem; font-weight:600; cursor:pointer; padding:0; text-decoration:underline;">
+                    🌲 Powered by Random Forest Regressor (50.0% R² Score) · View Model Benchmark ↗
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <div>
+          <strong>© Avenue Supermarts Limited (DMart). All rights reserved.</strong>
+          <div style="margin-top: 3px; font-size: 0.8rem; color: var(--text-dim);">Enterprise Retail Operations & Inventory
+            Management Portal</div>
+        </div>
+        <div class="footer-links">
+          <span class="footer-link">Store Network (330+ Outlets)</span>
+          <span class="footer-link">Investor Relations</span>
+          <span class="footer-link">Corporate Governance</span>
+          <span class="footer-link">Supply Chain Logistics</span>
+          <span class="footer-link">Helpdesk</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="app.js?v=3"></script>
+</body>
+
+</html>

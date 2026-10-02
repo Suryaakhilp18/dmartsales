@@ -33,31 +33,54 @@ eda_summary = None
 
 def load_artifacts():
     global model, scaler, model_meta, eda_summary
-    model_path = os.path.join(BASE_DIR, "dmart_sales_model.pkl")
-    model_gz_path = os.path.join(BASE_DIR, "dmart_sales_model.pkl.gz")
-    scaler_path = os.path.join(BASE_DIR, "scaler.pkl")
-    meta_path = os.path.join(BASE_DIR, "model_meta.json")
-    eda_path = os.path.join(BASE_DIR, "eda_summary.json")
 
-    if os.path.exists(model_gz_path):
-        import gzip
-        with gzip.open(model_gz_path, "rb") as f:
-            model = pickle.load(f)
-    elif os.path.exists(model_path):
-        with open(model_path, "rb") as f:
-            model = pickle.load(f)
+    candidate_dirs = [
+        BASE_DIR,
+        os.path.abspath(os.path.join(BASE_DIR, ".."))
+    ]
 
-    if os.path.exists(scaler_path):
-        with open(scaler_path, "rb") as f:
-            scaler = pickle.load(f)
+    for c_dir in candidate_dirs:
+        model_path = os.path.join(c_dir, "dmart_sales_model.pkl")
+        model_gz_path = os.path.join(c_dir, "dmart_sales_model.pkl.gz")
+        scaler_path = os.path.join(c_dir, "scaler.pkl")
+        meta_path = os.path.join(c_dir, "model_meta.json")
+        eda_path = os.path.join(c_dir, "eda_summary.json")
 
-    if os.path.exists(meta_path):
-        with open(meta_path, "r", encoding="utf-8") as f:
-            model_meta = json.load(f)
+        if model is None:
+            if os.path.exists(model_path):
+                try:
+                    with open(model_path, "rb") as f:
+                        model = pickle.load(f)
+                except Exception as e:
+                    print(f"Error loading model: {e}")
+            elif os.path.exists(model_gz_path):
+                try:
+                    import gzip
+                    with gzip.open(model_gz_path, "rb") as f:
+                        model = pickle.load(f)
+                except Exception as e:
+                    print(f"Error loading gzip model: {e}")
 
-    if os.path.exists(eda_path):
-        with open(eda_path, "r", encoding="utf-8") as f:
-            eda_summary = json.load(f)
+        if scaler is None and os.path.exists(scaler_path):
+            try:
+                with open(scaler_path, "rb") as f:
+                    scaler = pickle.load(f)
+            except Exception as e:
+                print(f"Error loading scaler: {e}")
+
+        if model_meta is None and os.path.exists(meta_path):
+            try:
+                with open(meta_path, "r", encoding="utf-8") as f:
+                    model_meta = json.load(f)
+            except Exception as e:
+                print(f"Error loading metadata: {e}")
+
+        if eda_summary is None and os.path.exists(eda_path):
+            try:
+                with open(eda_path, "r", encoding="utf-8") as f:
+                    eda_summary = json.load(f)
+            except Exception as e:
+                print(f"Error loading EDA summary: {e}")
 
 load_artifacts()
 
@@ -201,12 +224,13 @@ def predict_sales(req: PredictionRequest):
         raise HTTPException(status_code=400, detail=str(e))
 
 # Mount static folder (supports both /static/* and root /*)
+public_dir = os.path.join(BASE_DIR, "public")
 static_dir = os.path.join(BASE_DIR, "static")
-if not os.path.exists(static_dir):
-    os.makedirs(static_dir, exist_ok=True)
+serve_dir = public_dir if os.path.exists(public_dir) else static_dir
 
-app.mount("/static", StaticFiles(directory=static_dir), name="static_dir")
-app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
+if os.path.exists(serve_dir):
+    app.mount("/static", StaticFiles(directory=serve_dir), name="static_dir")
+    app.mount("/", StaticFiles(directory=serve_dir, html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
