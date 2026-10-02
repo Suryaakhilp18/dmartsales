@@ -1,0 +1,349 @@
+{
+  "kpis": {
+    "total_sales": 4645682.86,
+    "total_profit": 569637.02,
+    "avg_sales": 257.51,
+    "total_orders": 18041,
+    "profit_margin": 12.26,
+    "most_common_qty": 3
+  },
+  "yearly": [
+    {
+      "Year": 2011,
+      "Sales": 414348.0,
+      "Profit": 54487.0,
+      "Orders": 1462
+    },
+    {
+      "Year": 2012,
+      "Sales": 548880.0,
+      "Profit": 66223.0,
+      "Orders": 1871
+    },
+    {
+      "Year": 2013,
+      "Sales": 630224.0,
+      "Profit": 77200.0,
+      "Orders": 2101
+    },
+    {
+      "Year": 2014,
+      "Sales": 1239277.4981,
+      "Profit": 134873.9741,
+      "Orders": 4606
+    },
+    {
+      "Year": 2015,
+      "Sales": 470532.509,
+      "Profit": 61618.603699999985,
+      "Orders": 2102
+    },
+    {
+      "Year": 2016,
+      "Sales": 609205.598,
+      "Profit": 81795.17429999998,
+      "Orders": 2587
+    },
+    {
+      "Year": 2017,
+      "Sales": 733215.2552,
+      "Profit": 93439.26959999999,
+      "Orders": 3312
+    }
+  ],
+  "category": [
+    {
+      "Category": "Furniture",
+      "Sales": 1380808.7953,
+      "Profit": 68185.27279999998,
+      "Quantity": 12669
+    },
+    {
+      "Category": "Office Supplies",
+      "Sales": 1542705.0320000001,
+      "Profit": 247442.80079999997,
+      "Quantity": 42808
+    },
+    {
+      "Category": "Technology",
+      "Sales": 1722169.033,
+      "Profit": 254008.94809999998,
+      "Quantity": 12750
+    }
+  ],
+  "subcategory": [
+    {
+      "Sub-Category": "Phones",
+      "Sales": 612566.054,
+      "Profit": 72146.7306,
+      "Quantity": 5032
+    },
+    {
+      "Sub-Category": "Chairs",
+      "Sales": 515147.103,
+      "Profit": 42079.16629999999,
+      "Quantity": 3815
+    },
+    {
+      "Sub-Category": "Storage",
+      "Sales": 496332.608,
+      "Profit": 43273.82639999999,
+      "Quantity": 7045
+    },
+    {
+      "Sub-Category": "Copiers",
+      "Sales": 439609.02999999997,
+      "Profit": 98392.82489999999,
+      "Quantity": 1601
+    },
+    {
+      "Sub-Category": "Bookcases",
+      "Sales": 409275.9963,
+      "Profit": 40182.443999999996,
+      "Quantity": 2294
+    },
+    {
+      "Sub-Category": "Machines",
+      "Sales": 371304.631,
+      "Profit": 14702.75689999999,
+      "Quantity": 1689
+    },
+    {
+      "Sub-Category": "Appliances",
+      "Sales": 317432.161,
+      "Profit": 56044.005399999995,
+      "Quantity": 2617
+    },
+    {
+      "Sub-Category": "Accessories",
+      "Sales": 298689.318,
+      "Profit": 68766.6357,
+      "Quantity": 4428
+    },
+    {
+      "Sub-Category": "Tables",
+      "Sales": 296443.532,
+      "Profit": -38456.481100000005,
+      "Quantity": 1528
+    },
+    {
+      "Sub-Category": "Binders",
+      "Sales": 282346.733,
+      "Profit": 44924.76329999999,
+      "Quantity": 10022
+    },
+    {
+      "Sub-Category": "Furnishings",
+      "Sales": 159942.164,
+      "Profit": 24380.1436,
+      "Quantity": 5032
+    },
+    {
+      "Sub-Category": "Art",
+      "Sales": 154302.792,
+      "Profit": 30018.787,
+      "Quantity": 7329
+    },
+    {
+      "Sub-Category": "Paper",
+      "Sales": 114536.206,
+      "Profit": 41538.569299999996,
+      "Quantity": 6586
+    },
+    {
+      "Sub-Category": "Supplies",
+      "Sales": 85497.538,
+      "Profit": 5663.900499999999,
+      "Quantity": 2004
+    },
+    {
+      "Sub-Category": "Envelopes",
+      "Sales": 47686.402,
+      "Profit": 13427.1767,
+      "Quantity": 2184
+    },
+    {
+      "Sub-Category": "Labels",
+      "Sales": 25308.312,
+      "Profit": 8182.254,
+      "Quantity": 2822
+    },
+    {
+      "Sub-Category": "Fasteners",
+      "Sales": 19262.28,
+      "Profit": 4369.5181999999995,
+      "Quantity": 2199
+    }
+  ],
+  "region": [
+    {
+      "Region": "Central",
+      "Sales": 1816492.8908,
+      "Profit": 197342.3625
+    },
+    {
+      "Region": "South",
+      "Sales": 908971.905,
+      "Profit": 100914.43029999999
+    },
+    {
+      "Region": "West",
+      "Sales": 725457.8245,
+      "Profit": 108418.44889999999
+    },
+    {
+      "Region": "East",
+      "Sales": 678781.24,
+      "Profit": 91522.77999999998
+    },
+    {
+      "Region": "North",
+      "Sales": 515979.0,
+      "Profit": 71439.0
+    }
+  ],
+  "segment": [
+    {
+      "Segment": "Consumer",
+      "Sales": 2397683.345,
+      "Profit": 281566.2092
+    },
+    {
+      "Segment": "Corporate",
+      "Sales": 1444283.3668,
+      "Profit": 184613.134
+    },
+    {
+      "Segment": "Home Office",
+      "Sales": 803716.1485,
+      "Profit": 103457.6785
+    }
+  ],
+  "top_products": [
+    {
+      "Product Name": "Canon imageCLASS 2200 Advanced Copier",
+      "Sales": 61599.824
+    },
+    {
+      "Product Name": "Nokia Smart Phone, Full Size",
+      "Sales": 30645.0
+    },
+    {
+      "Product Name": "Fellowes PB500 Electric Punch Plastic Comb Binding Machine with Manual Bind",
+      "Sales": 27453.384
+    },
+    {
+      "Product Name": "Cisco TelePresence System EX90 Videoconferencing Unit",
+      "Sales": 22638.48
+    },
+    {
+      "Product Name": "HON 5400 Series Task Chairs for Big and Tall",
+      "Sales": 21870.576
+    },
+    {
+      "Product Name": "GBC DocuBind TL300 Electric Binding System",
+      "Sales": 19823.479
+    },
+    {
+      "Product Name": "GBC Ibimaster 500 Manual ProClick Binding System",
+      "Sales": 19024.5
+    },
+    {
+      "Product Name": "Hewlett Packard LaserJet 3310 Copier",
+      "Sales": 18839.686
+    },
+    {
+      "Product Name": "HP Designjet T520 Inkjet Large Format Printer - 24\" Color",
+      "Sales": 18374.895
+    },
+    {
+      "Product Name": "GBC DocuBind P400 Electric Binding System",
+      "Sales": 17965.068
+    }
+  ],
+  "discount_impact": [
+    {
+      "Discount": 0.0,
+      "Profit": 65.33
+    },
+    {
+      "Discount": 0.1,
+      "Profit": 74.24
+    },
+    {
+      "Discount": 0.15,
+      "Profit": 53.3
+    },
+    {
+      "Discount": 0.2,
+      "Profit": 24.43
+    },
+    {
+      "Discount": 0.3,
+      "Profit": -41.21
+    },
+    {
+      "Discount": 0.32,
+      "Profit": -88.56
+    },
+    {
+      "Discount": 0.35,
+      "Profit": -225.14
+    },
+    {
+      "Discount": 0.4,
+      "Profit": -93.85
+    },
+    {
+      "Discount": 0.45,
+      "Profit": -276.7
+    },
+    {
+      "Discount": 0.5,
+      "Profit": -102.07
+    },
+    {
+      "Discount": 0.6,
+      "Profit": -89.29
+    },
+    {
+      "Discount": 0.65,
+      "Profit": -375.71
+    },
+    {
+      "Discount": 0.7,
+      "Profit": -107.48
+    },
+    {
+      "Discount": 0.8,
+      "Profit": -102.19
+    },
+    {
+      "Discount": 0.85,
+      "Profit": -1925.0
+    }
+  ],
+  "region_category_matrix": {
+    "Furniture": {
+      "Central": 535711.16,
+      "East": 208291.2,
+      "North": 136742.0,
+      "South": 247451.68,
+      "West": 252612.74
+    },
+    "Office Supplies": {
+      "Central": 609594.42,
+      "East": 205516.06,
+      "North": 176786.0,
+      "South": 329955.31,
+      "West": 220853.25
+    },
+    "Technology": {
+      "Central": 671187.31,
+      "East": 264973.98,
+      "North": 202451.0,
+      "South": 331564.91,
+      "West": 251991.83
+    }
+  }
+}
